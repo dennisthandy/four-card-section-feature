@@ -1,0 +1,146 @@
+@import './variables';
+
+*,
+*::after,
+*::before {
+	margin: 0;
+	padding: 0;
+	box-sizing: border-box;
+	list-style: none;
+	outline: none;
+}
+
+body {
+	font-family: $font-poppins;
+	background-color: $neutral-very-light-gray;
+}
+
+main {
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	min-height: 100vh;
+}
+
+.container {
+	@media screen and (min-width: $d-desktop) {
+		width: 1180px;
+		margin: auto;
+	}
+}
+
+.feature {
+	margin: 6rem 1.75rem;
+
+	@media screen and (min-width: $d-desktop) {
+		margin: 4rem 1.75rem;
+	}
+
+	&__title {
+		font-weight: 200;
+		font-size: 24px;
+		margin-bottom: 1rem;
+		color: $neutral-very-dark-blue;
+		text-align: center;
+
+		@media screen and (min-width: $d-desktop) {
+			font-size: 32px;
+		}
+	}
+
+	&__subtitle {
+		margin-bottom: 4rem;
+		text-align: center;
+		color: $neutral-grayish-blue;
+		font-size: 15px;
+
+		@media screen and (min-width: $d-desktop) {
+			font-size: $font-body;
+			width: 32rem;
+			margin-left: auto;
+			margin-right: auto;
+			margin-bottom: 3.5rem;
+		}
+	}
+
+	&__cards {
+		display: flex;
+		flex-direction: column;
+
+		@media screen and (min-width: $d-desktop) {
+			flex-direction: row;
+			align-items: center;
+			justify-content: space-evenly;
+		}
+	}
+
+	.card {
+		padding: 1.5rem;
+		border-radius: 0.5rem;
+		box-shadow: 0 7px 8px rgba($color: $neutral-very-dark-blue, $alpha: 0.2);
+		display: flex;
+		flex-direction: column;
+		background-color: white;
+
+		&:not(:first-child) {
+			margin-top: 1.5rem;
+		}
+
+		&:first-child {
+			margin-bottom: 1.5rem;
+		}
+
+		&__title {
+			color: $neutral-very-dark-blue;
+			margin-bottom: 0.5rem;
+		}
+
+		&__description {
+			font-size: 14px;
+			color: $neutral-grayish-blue;
+			margin-bottom: 1.5rem;
+		}
+
+		&__img {
+			align-self: flex-end;
+		}
+
+		&--supervisor {
+			border-top: 0.25rem solid $primary-cyan;
+		}
+
+		&--team {
+			border-top: 0.25rem solid $primary-red;
+		}
+
+		&--karma {
+			border-top: 0.25rem solid $primary-orange;
+		}
+
+		&--calculator {
+			border-top: 0.25rem solid $primary-blue;
+		}
+
+		@media screen and (min-width: $d-desktop) {
+			width: 20rem;
+			height: 14rem;
+
+			&:first-child {
+				margin-bottom: 2.5rem;
+			}
+
+			&:last-child {
+				margin-top: 0;
+				margin-bottom: 1.5rem;
+			}
+		}
+	}
+}
+
+.attribution {
+	font-size: 11px;
+	text-align: center;
+}
+.attribution a {
+	color: hsl(228, 45%, 44%);
+}
